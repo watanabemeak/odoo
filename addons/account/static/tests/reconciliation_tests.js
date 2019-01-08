@@ -1822,7 +1822,7 @@ QUnit.module('account', {
             .trigger('click');
         $reconcileForm.find('.create_label input').val('dummy text').trigger('input');
         assert.verifySteps(["Account", "Tax", "Journal"], "Journal rpc done");
-        
+
         // Verify the two (gift + tax) lines were added to the list
         var $newLines = widget.$('tr.mv_line[data-line-id^=createLine]');
         var idx = ($($($newLines[0]).find("td")[3]).text().trim() === "dummy text") ? 0 : 1;
